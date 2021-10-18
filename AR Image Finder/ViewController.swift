@@ -28,7 +28,15 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         super.viewWillAppear(animated)
         
         // Create a session configuration
-        let configuration = ARWorldTrackingConfiguration()
+        let configuration = ARImageTrackingConfiguration()
+        
+        //Detect images
+        configuration.maximumNumberOfTrackedImages = 2
+        configuration.trackingImages =
+            ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: nil)!
+        
+        //Detect planes
+       // configuration.planeDetection = [.horizontal]
 
         // Run the view's session
         sceneView.session.run(configuration)
@@ -43,27 +51,47 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
     // MARK: - ARSCNViewDelegate
     
-/*
-    // Override to create and configure nodes for anchors added to the view's session.
-    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        let node = SCNNode()
-     
-        return node
-    }
-*/
-    
-    func session(_ session: ARSession, didFailWithError error: Error) {
-        // Present an error message to the user
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         
+        switch anchor {
+        case let imageAnchor as ARImageAnchor:
+            nodeAdded(node, for: imageAnchor)
+        case let planeAnchor as ARPlaneAnchor:
+            nodeAdded(node, for: planeAnchor)
+        default:
+            print("Found unknown anchor")
+        }
     }
-    
-    func sessionWasInterrupted(_ session: ARSession) {
-        // Inform the user that the session has been interrupted, for example, by presenting an overlay
         
+        func nodeAdded(_ node: SCNNode, for imageAnchor: ARImageAnchor) {
+            //Get image size
+            let image = imageAnchor.referenceImage
+            let size = image.physicalSize
+            
+            //Create plane of the same size
+            let height = 66 / 65 * size.height
+            let width = image.name == "horses" ?
+                156 / 150 * 15 / 6.269 * size.width:
+               156 / 150 * 15 / 6.1345 * size.width
+            
+            let plane = SCNPlane(width: width, height: height)
+            plane.firstMaterial?.diffuse.contents = image.name == "horses" ?
+                UIImage(named: "100dollarsface"): UIImage(named: "100dollarshouse")
+        
+            //Create node
+            let planeNode = SCNNode(geometry: plane)
+            planeNode.eulerAngles.x = -.pi / 2
+            
+            //Move planeNode
+           planeNode.position.x -= image.name == "horses" ? 0.01 : 0
+            planeNode.position.x += image.name == "theatre" ? 0.01 : 0
+            
+            //Add planeNode to the given node
+            node.addChildNode(planeNode)
     }
-    
-    func sessionInterruptionEnded(_ session: ARSession) {
-        // Reset tracking and/or remove existing anchors if consistent tracking is required
         
+        func nodeAdded(_ node: SCNNode, for planeAnchor: ARPlaneAnchor) {
+            print("Plane \(planeAnchor) added")
     }
 }
+

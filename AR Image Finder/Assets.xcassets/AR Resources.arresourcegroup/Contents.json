@@ -5,10 +5,10 @@
   },
   "resources" : [
     {
-      "filename" : "horses.jpg.arreferenceimage"
+      "filename" : "horses.arreferenceimage"
     },
     {
-      "filename" : "theater.jpg.arreferenceimage"
+      "filename" : "theatre.arreferenceimage"
     }
   ]
 }
