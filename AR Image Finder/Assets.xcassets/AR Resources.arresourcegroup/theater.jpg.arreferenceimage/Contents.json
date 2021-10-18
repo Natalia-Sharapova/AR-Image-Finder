@@ -1,0 +1,16 @@
+{
+  "images" : [
+    {
+      "filename" : "theater.jpg.HEIC",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "unit" : "centimeters",
+    "width" : 5.9683811129848232
+  }
+}
