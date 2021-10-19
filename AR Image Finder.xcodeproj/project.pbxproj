@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B9410E1271F3D4800F5AEEC /* Screenshot02.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B9410DE271F3D4800F5AEEC /* Screenshot02.png */; };
+		9B9410E5271F3D7A00F5AEEC /* Screenshot03.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B9410E4271F3D7A00F5AEEC /* Screenshot03.png */; };
+		9B9410E8271F3DE300F5AEEC /* Screenshot01.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B9410E7271F3DE300F5AEEC /* Screenshot01.png */; };
 		9BE25BD6271CA5F6001D44F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE25BD5271CA5F6001D44F2 /* AppDelegate.swift */; };
 		9BE25BD8271CA5F6001D44F2 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BE25BD7271CA5F6001D44F2 /* art.scnassets */; };
 		9BE25BDA271CA5F6001D44F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE25BD9271CA5F6001D44F2 /* ViewController.swift */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B9410DE271F3D4800F5AEEC /* Screenshot02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot02.png; sourceTree = "<group>"; };
+		9B9410E4271F3D7A00F5AEEC /* Screenshot03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot03.png; sourceTree = "<group>"; };
+		9B9410E7271F3DE300F5AEEC /* Screenshot01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot01.png; sourceTree = "<group>"; };
 		9BE25BD2271CA5F6001D44F2 /* AR Image Finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AR Image Finder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BE25BD5271CA5F6001D44F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BE25BD7271CA5F6001D44F2 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -37,6 +43,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B9410E6271F3DB400F5AEEC /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				9B9410E7271F3DE300F5AEEC /* Screenshot01.png */,
+				9B9410DE271F3D4800F5AEEC /* Screenshot02.png */,
+				9B9410E4271F3D7A00F5AEEC /* Screenshot03.png */,
+			);
+			path = Screenshots;
+			sourceTree = "<group>";
+		};
 		9BE25BC9271CA5F6001D44F2 = {
 			isa = PBXGroup;
 			children = (
@@ -58,11 +74,12 @@
 			children = (
 				9BE25BD5271CA5F6001D44F2 /* AppDelegate.swift */,
 				9BE25BD7271CA5F6001D44F2 /* art.scnassets */,
-				9BE25BD9271CA5F6001D44F2 /* ViewController.swift */,
-				9BE25BDB271CA5F6001D44F2 /* Main.storyboard */,
 				9BE25BDE271CA5F6001D44F2 /* Assets.xcassets */,
-				9BE25BE0271CA5F6001D44F2 /* LaunchScreen.storyboard */,
 				9BE25BE3271CA5F6001D44F2 /* Info.plist */,
+				9BE25BE0271CA5F6001D44F2 /* LaunchScreen.storyboard */,
+				9BE25BDB271CA5F6001D44F2 /* Main.storyboard */,
+				9B9410E6271F3DB400F5AEEC /* Screenshots */,
+				9BE25BD9271CA5F6001D44F2 /* ViewController.swift */,
 			);
 			path = "AR Image Finder";
 			sourceTree = "<group>";
@@ -127,6 +144,9 @@
 				9BE25BD8271CA5F6001D44F2 /* art.scnassets in Resources */,
 				9BE25BE2271CA5F6001D44F2 /* LaunchScreen.storyboard in Resources */,
 				9BE25BDF271CA5F6001D44F2 /* Assets.xcassets in Resources */,
+				9B9410E8271F3DE300F5AEEC /* Screenshot01.png in Resources */,
+				9B9410E1271F3D4800F5AEEC /* Screenshot02.png in Resources */,
+				9B9410E5271F3D7A00F5AEEC /* Screenshot03.png in Resources */,
 				9BE25BDD271CA5F6001D44F2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
